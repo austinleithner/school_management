@@ -1,0 +1,25 @@
+{% extends "core_template.html"%}
+{% block title %}Add Teacher{% endblock %}
+{% block script %}
+{% endblock %}
+{% block content %}
+    <div style="border-style: solid; border-radius: 5px; width: 18%; padding: 10px">
+        {% if message %}
+            <p style="color: green">{{ message }}</p>
+        {% endif %}
+        <h4>Add the teacher here:</h4>
+        <form method="post">
+            {% csrf_token %}
+            <label for="fname">First name:</label>
+            <input type="text" id="fname" name="fname" required><br>
+
+            <label for="lname">Last name:</label>
+            <input type="text" id="lname" name="lname" required><br>
+
+            <label for="status">Teacher's status:</label>
+            <input type="text" id="status" name="status" ><br>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+{% endblock %}
